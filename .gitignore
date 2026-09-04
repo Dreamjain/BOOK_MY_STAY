@@ -1,0 +1,13 @@
+# Java build artifacts
+*.class
+/out/
+/build/
+/target/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Local runtime state
+system_state.dat
