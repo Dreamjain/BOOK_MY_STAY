@@ -2,6 +2,8 @@
 
 A Java-based **hotel booking system** developed as a progressive use-case project. The repository models room inventory, booking requests, reservations, validation, booking history, cancellation, concurrency, and persistence/recovery.
 
+![Java Build](https://github.com/Dreamjain/BOOK_MY_STAY/actions/workflows/java-build.yml/badge.svg)
+
 ## 🖼️ System Architecture
 
 ```mermaid
@@ -48,14 +50,25 @@ The source is organized as incremental use cases, including:
 
 ## 🚀 Run a Use Case
 
-Make sure a JDK is installed, then compile and run the desired `.java` use case. For example:
+Make sure JDK 17+ is installed, then compile and run the desired `.java` use case. For example:
 
 ```bash
 javac UseCase1HotelBookingApp.java
 java UseCase1HotelBookingApp
 ```
 
-Later use cases can be compiled similarly. Generated `.class` files are already present in the repository, but compiling from source is recommended for reproducibility.
+For the room-initialization use case:
+
+```bash
+javac UseCase2RoomInitialization.java
+java UseCase2RoomInitialization
+```
+
+Generated `.class` files are ignored by Git; compiling from source keeps local builds reproducible.
+
+## 🔄 Continuous Validation
+
+Every push and pull request runs GitHub Actions with Java 17. The workflow compiles the core use cases and executes both programs, catching compilation or startup regressions automatically.
 
 ## 📁 Repository Structure
 
@@ -65,11 +78,12 @@ Booking*.java       # Booking domain/service classes
 Room*.java          # Room and inventory models
 Reservation.java    # Reservation model
 SystemState.dat     # Persistence state used by the project
+.github/workflows/  # Automated Java validation
 ```
 
 ## 📌 Status
 
-Completed academic Java project / use-case series.
+Completed academic Java project / use-case series with automated build validation.
 
 ## 👨‍💻 Author
 
