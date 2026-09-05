@@ -1,0 +1,27 @@
+name: Java Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  compile-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Compile core use cases
+        run: javac UseCase1HotelBookingApp.java UseCase2RoomInitialization.java
+
+      - name: Run application startup use case
+        run: java UseCase1HotelBookingApp
+
+      - name: Run room initialization use case
+        run: java UseCase2RoomInitialization
